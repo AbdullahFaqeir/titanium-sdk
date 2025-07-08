@@ -245,6 +245,10 @@ publishing {
 						childNode.appendNode('groupId', it.group)
 						childNode.appendNode('artifactId', it.name)
 
+                        if (it.group == 'dev.accusolutions') {
+                            childNode.appendNode('type', 'aar')
+                        }
+
 						// Use minimum SDK specified by module manifest.
 						if ((it.group == 'org.appcelerator') && (it.name == 'titanium')) {
 							childNode.appendNode('version', '<%- moduleMinSdkVersion %>')
